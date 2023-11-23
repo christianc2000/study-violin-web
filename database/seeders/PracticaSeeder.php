@@ -14,48 +14,40 @@ class PracticaSeeder extends Seeder
      */
     public function run()
     {
-        //Postura corporal en parado
-        //Postura corporal en sentado
-        //Postura mano izquierda
-        //Postura mano derecha
         $practicas = [
             [
-                'nombre' => 'Postura corporal en parado',
+                'estado'=>true,
+                'nombre' => 'Postura corporal',
+                'url'=>'https://rekognitions3-bucket.s3.amazonaws.com/study_violin/postura+violin.jpg',
                 'cantidad_ejercicio' => '4',
                 'cantidad_evaluacion' => '3',
-                'puntos_ejercicio' => '400',
-                'puntos_evaluacion' => '200',
+                'cantidad_puntos' => '400',
                 'estudio_id' => 1
             ],
             [
-                'nombre' => 'Postura corporal en sentado',
+                'estado'=>true,
+                'nombre' => 'Mano izquierda',
+                'url'=>'https://rekognitions3-bucket.s3.amazonaws.com/study_violin/postura+mano+izquierda2.jpg',
                 'cantidad_ejercicio' => '4',
                 'cantidad_evaluacion' => '3',
-                'puntos_ejercicio' => '400',
-                'puntos_evaluacion' => '200',
+                'cantidad_puntos' => '400',
                 'estudio_id' => 1
             ],
             [
-                'nombre' => 'Postura mano izquierda',
+                'estado'=>true,
+                'nombre' => 'Mano izquierda',
+                'url'=>'https://rekognitions3-bucket.s3.amazonaws.com/study_violin/postura+arco.jpeg',
                 'cantidad_ejercicio' => '4',
                 'cantidad_evaluacion' => '3',
-                'puntos_ejercicio' => '400',
-                'puntos_evaluacion' => '200',
+                'cantidad_puntos' => '400',
                 'estudio_id' => 1
             ],
-            [
-                'nombre' => 'Postura mano derecha',
-                'cantidad_ejercicio' => '4',
-                'cantidad_evaluacion' => '3',
-                'puntos_ejercicio' => '400',
-                'puntos_evaluacion' => '200',
-                'estudio_id' => 1
-            ]
+           
         ];
         foreach ($practicas as $practica) {
-            Practica::created([
+            Practica::create(
                 $practica
-            ]);
+            );
         }
     }
 }

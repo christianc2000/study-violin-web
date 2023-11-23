@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Contenido;
 use Illuminate\Database\Seeder;
 
 class ContenidoSeeder extends Seeder
@@ -13,25 +14,31 @@ class ContenidoSeeder extends Seeder
      */
     public function run()
     {
-        $contenido = [
+        $contenidos = [
             [
-                'url'=>'',
+                'estado'=>true,
+                'url'=>'https://rekognitions3-bucket.s3.amazonaws.com/study_violin/Ejercicios/Postura+erguida+1.jpg',
                 'descripcion'=>'',
-                'posicion'=>'',
-                'ejercicio_id'=>''
+                'posicion'=>1,
+                'ejercicio_id'=>1
             ],
             [
-                'url'=>'',
+                'estado'=>true,
+                'url'=>'https://rekognitions3-bucket.s3.amazonaws.com/study_violin/Ejercicios/Postura+erguida+2.jpg',
                 'descripcion'=>'',
-                'posicion'=>'',
-                'ejercicio_id'=>''
+                'posicion'=>2,
+                'ejercicio_id'=>1
             ],
             [
-                'url'=>'',
+                'estado'=>true,
+                'url'=>'https://rekognitions3-bucket.s3.amazonaws.com/study_violin/Ejercicios/Postura+erguida+3.jpg',
                 'descripcion'=>'',
-                'posicion'=>'',
-                'ejercicio_id'=>''
+                'posicion'=>3,
+                'ejercicio_id'=>1
             ],
         ];
+        foreach ($contenidos as $contenido) {
+            Contenido::create($contenido);
+        }
     }
 }

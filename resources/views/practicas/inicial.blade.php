@@ -140,7 +140,7 @@
         async function iniciar() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
-
+            console.log("iniciar......")
             // load the model and metadata
             model = await tmPose.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();

@@ -16,31 +16,37 @@ class EjercicioSeeder extends Seeder
     {
         $ejercicios = [
             [
-                'nombre' => 'Sujetar con el mentón',
-                'descripcion' => 'Presionar el mentón con la clavicula para poder colocar el violín y mantenerlo en esa posición',
-                'tipo'=>'E',
+                'estado'=>true,
+                'posicion'=>1,
+                'nombre' => 'Postura erguida',
+                'descripcion' => 'Postura recta del cuerpo, con los pies en forma de "V" a la altura de los hombros',
                 'puntos' => '100',
+                'tipo'=>1,
                 'practica_id' => 1
             ],
             [
-                'nombre' => 'Cuerpo erguido',
+                'estado'=>true,
+                'posicion'=>2,
+                'nombre' => 'Fuerza menton',
                 'descripcion' => 'Agarrar el violín, con la espalda recta, pies en la linea de los hombres, rodillas ligeramente flexionadas y la nariz, diapason y pie izquierdo deben estar alineados',
-                'tipo'=>'E',
                 'puntos' => '100',
+                'tipo'=>1,
                 'practica_id' => 1
             ],
             [
-                'nombre' => 'Evaluación-Practica 1',
-                'descripcion' => 'Postura corporal',
-                'tipo'=>'P',
+                'estado'=>true,
+                'posicion'=>3,
+                'nombre' => 'Sujetar mástil',
+                'descripcion' => 'Agarra el mástil o mango colocando la mano correctamente',
                 'puntos' => '200',
+                'tipo'=>1,
                 'practica_id' => 1
             ]
         ];
         foreach ($ejercicios as $ejercicio) {
-            Ejercicio::created([
+            Ejercicio::create(
                 $ejercicio
-            ]);
+            );
         }
     }
 }

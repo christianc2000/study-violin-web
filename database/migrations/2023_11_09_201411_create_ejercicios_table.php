@@ -15,10 +15,12 @@ class CreateEjerciciosTable extends Migration
     {
         Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
+            $table->boolean('estado');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('tipo',1);
+            $table->unsignedInteger('posicion');
             $table->unsignedInteger('puntos');
+            $table->unsignedSmallInteger('tipo');
             $table->foreignId('practica_id')->references('id')->on('practicas')->onDelete('cascade');
             $table->timestamps();
         });

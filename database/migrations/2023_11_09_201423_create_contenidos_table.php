@@ -15,6 +15,7 @@ class CreateContenidosTable extends Migration
     {
         Schema::create('contenidos', function (Blueprint $table) {
             $table->id();
+            $table->boolean('estado');
             $table->string('url');
             $table->string('descripcion');
             $table->unsignedInteger('posicion');

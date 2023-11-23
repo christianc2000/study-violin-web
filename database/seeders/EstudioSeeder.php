@@ -15,14 +15,16 @@ class EstudioSeeder extends Seeder
     public function run()
     {
         Estudio::create([
-            'url' => asset('imagenes/violinlogo.jpg'),
-            'nombre' => 'Posturas',
+            'estado'=>true,
+            'url' => "https://rekognitions3-bucket.s3.amazonaws.com/study_violin/violinlogo.jpg",
+            'nombre' => 'Técnicas',
             'puntos_requerido' => 0
         ]);
         Estudio::create([
-            'url' => asset('imagenes/violinlogo.jpg'),
+            'estado'=>true,
+            'url' => "https://rekognitions3-bucket.s3.amazonaws.com/study_violin/violinlogo.jpg",
             'nombre' => 'Lectura Musical',
-            'puntos_requerido' => 5000
+            'puntos_requerido' => 15000
         ]);
     }
 }

@@ -9,7 +9,13 @@ class Contenido extends Model
 {
     use HasFactory;
     protected $table = 'contenidos';
-    protected $fillable = ['url', 'descripcion', 'posicion', 'ejercicio_id']; 
+    protected $fillable = [
+        'estado',
+        'url', 
+        'descripcion', 
+        'posicion', 
+        'ejercicio_id'];
+     
     public function ejercicio()
     {
         return $this->belongsTo(Ejercicio::class);

@@ -43,6 +43,6 @@ class User extends Authenticatable
     ];
     public function planEstudio()
     {
-        return $this->hasMany(PlanEstudios::class);
+        return $this->hasMany(PlanEstudio::class);
     }
 }
