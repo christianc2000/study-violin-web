@@ -19,6 +19,7 @@ class CreateContenidosTable extends Migration
             $table->string('url');
             $table->string('descripcion');
             $table->unsignedInteger('posicion');
+            $table->string('url_teachable_model')->nullable();
             $table->foreignId('ejercicio_id')->references('id')->on('ejercicios')->onDelete('cascade');
             $table->timestamps();
         });

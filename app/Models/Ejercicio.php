@@ -30,4 +30,10 @@ class Ejercicio extends Model
     {
         return $this->hasMany(Contenido::class)->where('estado', true)->orderBy('posicion', 'asc');
     }
+    public function fechas()
+    {
+        return $this->belongsToMany(Fecha::class, 'ejercicio_fechas')
+                    ->withPivot('puntuacion')
+                    ->withTimestamps();
+    }
 }
